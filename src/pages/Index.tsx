@@ -1,6 +1,5 @@
-
 import React, { useEffect, useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code, Database, Brain, Globe, ChevronDown, MapPin, Calendar, Award, Star, Settings, FileText, Users, Target, Lightbulb, MessageSquare, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code, Database, Brain, Globe, MapPin, Calendar, Award, Star, Settings, FileText, Users, Target, Lightbulb, MessageSquare, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -183,7 +182,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6">
+      <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6 relative">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="text-6xl md:text-7xl font-bold mb-6">
             Hi, I'm <br />
@@ -203,7 +202,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-white/20 text-white hover:bg-white/10 rounded-full w-16 h-16"
+              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://github.com/Nishanth2480', '_blank')}
             >
               <Github className="w-8 h-8" />
@@ -211,7 +210,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-white/20 text-white hover:bg-white/10 rounded-full w-16 h-16"
+              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://www.linkedin.com/in/nishanth-premkumar-2177a1260', '_blank')}
             >
               <Linkedin className="w-8 h-8" />
@@ -219,7 +218,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-white/20 text-white hover:bg-white/10 rounded-full w-16 h-16"
+              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://leetcode.com/u/Nishanth2408/', '_blank')}
             >
               <ExternalLink className="w-8 h-8" />
@@ -227,7 +226,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-white/20 text-white hover:bg-white/10 rounded-full w-16 h-16"
+              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://www.codechef.com/users/nishanth_08', '_blank')}
             >
               <ExternalLink className="w-8 h-8" />
@@ -253,7 +252,7 @@ const Index = () => {
           {/* Get In Touch Section */}
           <div className="mt-8">
             <p className="text-gray-400 mb-4">Get in touch with me</p>
-            <div className="flex justify-center gap-4 text-gray-400">
+            <div className="flex justify-center gap-6 text-gray-400">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
                 <span>nishanth.direct@gmail.com</span>
