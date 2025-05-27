@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code, Database, Brain, Globe, ChevronDown, MapPin, Calendar, Award, Star, Settings, FileText, Users, Target, Lightbulb, MessageSquare } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code, Database, Brain, Globe, ChevronDown, MapPin, Calendar, Award, Star, Settings, FileText, Users, Target, Lightbulb, MessageSquare, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -42,32 +42,32 @@ const Index = () => {
 
   const skillCategories = {
     languages: [
-      { name: 'Python', level: 85, category: 'Intermediate' },
-      { name: 'JavaScript', level: 70, category: 'Beginner' },
-      { name: 'HTML/CSS', level: 90, category: 'Advanced' },
-      { name: 'MySQL', level: 80, category: 'Intermediate' },
-      { name: 'Java', level: 65, category: 'Beginner' }
+      { name: 'Python', category: 'Intermediate' },
+      { name: 'JavaScript', category: 'Beginner' },
+      { name: 'HTML/CSS', category: 'Advanced' },
+      { name: 'MySQL', category: 'Intermediate' },
+      { name: 'Java', category: 'Beginner' }
     ],
     frameworks: [
-      { name: 'React.js', level: 85, category: 'Intermediate' },
-      { name: 'Node.js', level: 80, category: 'Intermediate' },
-      { name: 'Express.js', level: 80, category: 'Intermediate' },
-      { name: 'TensorFlow', level: 75, category: 'Intermediate' },
-      { name: 'Scikit-learn', level: 80, category: 'Intermediate' }
+      { name: 'React.js', category: 'Intermediate' },
+      { name: 'Node.js', category: 'Intermediate' },
+      { name: 'Express.js', category: 'Intermediate' },
+      { name: 'TensorFlow', category: 'Intermediate' },
+      { name: 'Scikit-learn', category: 'Intermediate' }
     ],
     tools: [
-      { name: 'Git/GitHub', level: 70, category: 'Beginner' },
-      { name: 'VS Code', level: 85, category: 'Intermediate' },
-      { name: 'Figma', level: 75, category: 'Intermediate' },
-      { name: 'PowerBI', level: 80, category: 'Intermediate' },
-      { name: 'Google Looker', level: 95, category: 'Expert' }
+      { name: 'Git/GitHub', category: 'Beginner' },
+      { name: 'VS Code', category: 'Intermediate' },
+      { name: 'Figma', category: 'Intermediate' },
+      { name: 'PowerBI', category: 'Intermediate' },
+      { name: 'Google Looker', category: 'Expert' }
     ],
     soft: [
-      { name: 'Problem Solving', level: 95, category: 'Expert' },
-      { name: 'Team Collaboration', level: 95, category: 'Expert' },
-      { name: 'Communication', level: 90, category: 'Advanced' },
-      { name: 'Adaptability', level: 95, category: 'Expert' },
-      { name: 'Leadership', level: 90, category: 'Advanced' }
+      { name: 'Problem Solving', category: 'Expert' },
+      { name: 'Team Collaboration', category: 'Expert' },
+      { name: 'Communication', category: 'Advanced' },
+      { name: 'Adaptability', category: 'Expert' },
+      { name: 'Leadership', category: 'Advanced' }
     ]
   };
 
@@ -234,7 +234,7 @@ const Index = () => {
             </Button>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 justify-center">
+          <div className="flex flex-col md:flex-row gap-6 justify-center mb-8">
             <Button 
               onClick={() => scrollToSection('projects')}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full"
@@ -249,6 +249,21 @@ const Index = () => {
               Get In Touch
             </Button>
           </div>
+
+          {/* Get In Touch Section */}
+          <div className="mt-8">
+            <p className="text-gray-400 mb-4">Get in touch with me</p>
+            <div className="flex justify-center gap-4 text-gray-400">
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                <span>nishanth.direct@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <span>+91 7200192408</span>
+              </div>
+            </div>
+          </div>
         </div>
         
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -261,6 +276,20 @@ const Index = () => {
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-white">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-blue-400">Passionate Computer Science Student</h3>
+              <div className="space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  I'm currently pursuing my Computer Science degree at Chennai Institute of Technology, where I'm developing expertise in Artificial Intelligence, Machine Learning, and Data Science.
+                </p>
+                <p>
+                  My journey in technology has led me to work on exciting projects involving fraud detection, stock trading platforms, and restaurant management systems. I'm passionate about using technology to solve real-world problems and create meaningful impact.
+                </p>
+                <p>
+                  When I'm not coding, you can find me exploring new technologies, participating in coding competitions, or working on innovative projects that push the boundaries of what's possible with AI and machine learning.
+                </p>
+              </div>
+            </div>
             <Card className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-blue-400 flex items-center gap-3">
@@ -291,7 +320,10 @@ const Index = () => {
       {/* Skills Section */}
       <section id="skills" className="py-24 px-6 bg-slate-800/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">Skills</h2>
+          <h2 className="text-4xl font-bold text-center mb-4 text-white">Technical Expertise</h2>
+          <p className="text-center text-gray-400 mb-16 max-w-3xl mx-auto">
+            A comprehensive overview of my technical skills and proficiency levels across different domains
+          </p>
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Programming Languages */}
             <Card className="bg-slate-800/50 border-slate-700">
@@ -303,14 +335,11 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {skillCategories.languages.map((skill, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-white font-medium">{skill.name}</span>
-                      <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
-                        {skill.category}
-                      </Badge>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-white font-medium">{skill.name}</span>
+                    <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
+                      {skill.category}
+                    </Badge>
                   </div>
                 ))}
               </CardContent>
@@ -326,14 +355,11 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {skillCategories.frameworks.map((skill, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-white font-medium">{skill.name}</span>
-                      <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
-                        {skill.category}
-                      </Badge>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-white font-medium">{skill.name}</span>
+                    <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
+                      {skill.category}
+                    </Badge>
                   </div>
                 ))}
               </CardContent>
@@ -349,14 +375,11 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {skillCategories.tools.map((skill, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-white font-medium">{skill.name}</span>
-                      <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
-                        {skill.category}
-                      </Badge>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-white font-medium">{skill.name}</span>
+                    <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
+                      {skill.category}
+                    </Badge>
                   </div>
                 ))}
               </CardContent>
@@ -372,14 +395,11 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {skillCategories.soft.map((skill, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-white font-medium">{skill.name}</span>
-                      <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
-                        {skill.category}
-                      </Badge>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-white font-medium">{skill.name}</span>
+                    <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
+                      {skill.category}
+                    </Badge>
                   </div>
                 ))}
               </CardContent>
@@ -529,6 +549,14 @@ const Index = () => {
                   <div>
                     <p className="text-white font-medium">Email</p>
                     <p className="text-gray-400">nishanth.direct@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-4 bg-slate-800/50 rounded-lg">
+                  <Phone className="w-6 h-6 text-blue-400" />
+                  <div>
+                    <p className="text-white font-medium">Phone</p>
+                    <p className="text-gray-400">+91 7200192408</p>
                   </div>
                 </div>
                 
