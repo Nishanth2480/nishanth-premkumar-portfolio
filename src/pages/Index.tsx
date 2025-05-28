@@ -250,16 +250,16 @@ const Index = () => {
             </Button>
           </div>
 
-          {/* Get In Touch Section */}
-          <div className="mt-8">
-            <p className="text-gray-400 mb-4">Get in touch with me</p>
-            <div className="flex justify-center gap-6 text-gray-400">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
+          {/* Get In Touch Section - Now visible */}
+          <div className="mt-8 bg-slate-800/30 rounded-lg p-6 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-4 text-lg font-medium">Get in touch with me</p>
+            <div className="flex flex-col md:flex-row justify-center gap-6 text-gray-300">
+              <div className="flex items-center justify-center gap-2">
+                <Mail className="w-5 h-5 text-blue-400" />
                 <span>nishanth.direct@gmail.com</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
+              <div className="flex items-center justify-center gap-2">
+                <Phone className="w-5 h-5 text-blue-400" />
                 <span>+91 7200192408</span>
               </div>
             </div>
@@ -298,7 +298,7 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <h4 className="text-xl font-semibold mb-2">Chennai Institute Of Technology</h4>
+                <h4 className="text-xl font-semibold mb-2 text-white">Chennai Institute Of Technology</h4>
                 <p className="text-blue-300 mb-2">B.Tech Artificial Intelligence and Data Science</p>
                 <div className="flex items-center gap-2 text-gray-400 mb-2">
                   <MapPin className="w-4 h-4" />
@@ -307,9 +307,6 @@ const Index = () => {
                 <div className="flex items-center gap-2 text-gray-400 mb-4">
                   <Calendar className="w-4 h-4" />
                   <span>NOV 2022 - 2026</span>
-                </div>
-                <div className="bg-blue-500/20 rounded-lg p-3">
-                  <p className="text-white font-semibold">CGPA: 8.6</p>
                 </div>
               </CardContent>
             </Card>
