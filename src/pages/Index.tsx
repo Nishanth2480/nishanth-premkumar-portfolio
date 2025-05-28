@@ -206,7 +206,7 @@ const Index = () => {
               className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://github.com/Nishanth2480', '_blank')}
             >
-              <Github className="w-8 h-8" />
+              <Github className="w-8 h-8 text-blue-400 hover:text-white" />
             </Button>
             <Button 
               variant="outline" 
@@ -214,7 +214,7 @@ const Index = () => {
               className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://www.linkedin.com/in/nishanth-premkumar-2177a1260', '_blank')}
             >
-              <Linkedin className="w-8 h-8" />
+              <Linkedin className="w-8 h-8 text-blue-400 hover:text-white" />
             </Button>
             <Button 
               variant="outline" 
@@ -222,7 +222,7 @@ const Index = () => {
               className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://leetcode.com/u/Nishanth2408/', '_blank')}
             >
-              <ExternalLink className="w-8 h-8" />
+              <ExternalLink className="w-8 h-8 text-blue-400 hover:text-white" />
             </Button>
             <Button 
               variant="outline" 
@@ -230,7 +230,7 @@ const Index = () => {
               className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://www.codechef.com/users/nishanth_08', '_blank')}
             >
-              <ExternalLink className="w-8 h-8" />
+              <ExternalLink className="w-8 h-8 text-blue-400 hover:text-white" />
             </Button>
           </div>
 
