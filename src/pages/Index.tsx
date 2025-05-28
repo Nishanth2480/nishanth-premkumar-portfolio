@@ -5,22 +5,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { ChevronDown } from 'lucide-react';
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-
   useEffect(() => {
     setIsVisible(true);
-    
     const handleScroll = () => {
       const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
-      
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
+          const {
+            offsetTop,
+            offsetHeight
+          } = element;
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             break;
@@ -28,129 +27,154 @@ const Index = () => {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
   const skillCategories = {
-    languages: [
-      { name: 'Python', category: 'Intermediate' },
-      { name: 'JavaScript', category: 'Beginner' },
-      { name: 'HTML/CSS', category: 'Advanced' },
-      { name: 'MySQL', category: 'Intermediate' },
-      { name: 'Java', category: 'Beginner' }
-    ],
-    frameworks: [
-      { name: 'React.js', category: 'Intermediate' },
-      { name: 'Node.js', category: 'Intermediate' },
-      { name: 'Express.js', category: 'Intermediate' },
-      { name: 'TensorFlow', category: 'Intermediate' },
-      { name: 'Scikit-learn', category: 'Intermediate' }
-    ],
-    tools: [
-      { name: 'Git/GitHub', category: 'Beginner' },
-      { name: 'VS Code', category: 'Intermediate' },
-      { name: 'Figma', category: 'Intermediate' },
-      { name: 'PowerBI', category: 'Intermediate' },
-      { name: 'Google Looker', category: 'Expert' }
-    ],
-    soft: [
-      { name: 'Problem Solving', category: 'Expert' },
-      { name: 'Team Collaboration', category: 'Expert' },
-      { name: 'Communication', category: 'Advanced' },
-      { name: 'Adaptability', category: 'Expert' },
-      { name: 'Leadership', category: 'Advanced' }
-    ]
+    languages: [{
+      name: 'Python',
+      category: 'Intermediate'
+    }, {
+      name: 'JavaScript',
+      category: 'Beginner'
+    }, {
+      name: 'HTML/CSS',
+      category: 'Advanced'
+    }, {
+      name: 'MySQL',
+      category: 'Intermediate'
+    }, {
+      name: 'Java',
+      category: 'Beginner'
+    }],
+    frameworks: [{
+      name: 'React.js',
+      category: 'Intermediate'
+    }, {
+      name: 'Node.js',
+      category: 'Intermediate'
+    }, {
+      name: 'Express.js',
+      category: 'Intermediate'
+    }, {
+      name: 'TensorFlow',
+      category: 'Intermediate'
+    }, {
+      name: 'Scikit-learn',
+      category: 'Intermediate'
+    }],
+    tools: [{
+      name: 'Git/GitHub',
+      category: 'Beginner'
+    }, {
+      name: 'VS Code',
+      category: 'Intermediate'
+    }, {
+      name: 'Figma',
+      category: 'Intermediate'
+    }, {
+      name: 'PowerBI',
+      category: 'Intermediate'
+    }, {
+      name: 'Google Looker',
+      category: 'Expert'
+    }],
+    soft: [{
+      name: 'Problem Solving',
+      category: 'Expert'
+    }, {
+      name: 'Team Collaboration',
+      category: 'Expert'
+    }, {
+      name: 'Communication',
+      category: 'Advanced'
+    }, {
+      name: 'Adaptability',
+      category: 'Expert'
+    }, {
+      name: 'Leadership',
+      category: 'Advanced'
+    }]
   };
-
-  const projects = [
-    {
-      id: 'RMS',
-      title: 'Restaurant Management System',
-      shortTitle: 'RMS',
-      description: 'A full-stack web application for a restaurant, designed to enhance the dining experience for both customers and restaurant staff. The application features a modern, responsive interface, allowing customers to browse the menu, place orders, and view real-time updates on order status.',
-      tech: ['HTML', 'CSS', 'React.js', 'Node.js', 'Express', 'MySQL'],
-      additionalTech: ['Responsive Design'],
-      github: 'https://github.com/Nishanth2480/Restaurant.git',
-      gradient: 'from-orange-400 to-red-500'
-    },
-    {
-      id: 'EDS',
-      title: 'Emotion Detection System',
-      shortTitle: 'EDS',
-      description: 'Built an emotion detection system using TensorFlow and Keras to identify facial expressions into emotions like happy, sad, angry. Utilized CNNs for image classification, with data preprocessing and augmentation using Python libraries such as NumPy and OpenCV.',
-      tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'CNN', 'NumPy'],
-      github: 'https://github.com/Nishanth2480/Emotion-Detection.git',
-      gradient: 'from-blue-400 to-purple-500'
-    },
-    {
-      id: 'RDM',
-      title: 'RE-REACT Document Management',
-      shortTitle: 'RDM',
-      description: 'Built a document management system using React.js and Microsoft Prebuilt to detect and manipulate sensitive PII in text, Excel, and Word documents. Enabled custom entity recognition, document uploads, and pseudonym generation with a clean and intuitive interface.',
-      tech: ['React.js', 'TensorFlow', 'OpenCV', 'Document Processing'],
-      additionalTech: ['Entity Recognition'],
-      github: 'https://github.com/Nishanth2480/RE-DACT.git',
-      gradient: 'from-green-400 to-blue-500'
-    },
-    {
-      id: 'IPW',
-      title: 'Investment Portfolio Website',
-      shortTitle: 'IPW',
-      description: 'Developed a live stock trading platform using React.js, Redux, TailwindCSS, Node.js, and Express.js. Implemented user authentication, stock detail views, owned stock linking, and a smooth persistent system with responsive UI.',
-      tech: ['React.js', 'Redux', 'TailwindCSS', 'Node.js', 'Express.js'],
-      github: 'https://github.com/Nishanth2480/Investment-Website.git',
-      gradient: 'from-pink-400 to-purple-500'
-    }
-  ];
-
-  const achievements = [
-    {
-      title: 'LeetCode Problem Solver',
-      category: 'Competitive Programming',
-      description: 'Solved 250+ problems on LeetCode, demonstrating strong problem-solving skills in data structures and algorithms. Additionally completed top-month data analyst internship at AppScuba.',
-      icon: <Code className="w-6 h-6" />
-    },
-    {
-      title: 'AI/ML Certifications',
-      category: 'Certifications',
-      description: 'Completed multiple certifications including Introduction to Internet of Things (NPTEL), Cloud Practitioner Essentials (AWS), Microsoft Power BI Desktop (Coursera), and Machine Learning (Coursera).',
-      icon: <Award className="w-6 h-6" />
-    },
-    {
-      title: 'Full-Stack Development',
-      category: 'Development',
-      description: 'Successfully developed and deployed multiple full-stack applications including restaurant management systems, emotion detection systems, and investment portfolio platforms.',
-      icon: <Globe className="w-6 h-6" />
-    },
-    {
-      title: 'Python Full Stack Certification',
-      category: 'Certification',
-      description: 'Earned comprehensive Python Full Stack certification from Skill Vertex, demonstrating proficiency in both frontend and backend development using Python technologies.',
-      icon: <FileText className="w-6 h-6" />
-    }
-  ];
-
+  const projects = [{
+    id: 'RMS',
+    title: 'Restaurant Management System',
+    shortTitle: 'RMS',
+    description: 'A full-stack web application for a restaurant, designed to enhance the dining experience for both customers and restaurant staff. The application features a modern, responsive interface, allowing customers to browse the menu, place orders, and view real-time updates on order status.',
+    tech: ['HTML', 'CSS', 'React.js', 'Node.js', 'Express', 'MySQL'],
+    additionalTech: ['Responsive Design'],
+    github: 'https://github.com/Nishanth2480/Restaurant.git',
+    gradient: 'from-orange-400 to-red-500'
+  }, {
+    id: 'EDS',
+    title: 'Emotion Detection System',
+    shortTitle: 'EDS',
+    description: 'Built an emotion detection system using TensorFlow and Keras to identify facial expressions into emotions like happy, sad, angry. Utilized CNNs for image classification, with data preprocessing and augmentation using Python libraries such as NumPy and OpenCV.',
+    tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'CNN', 'NumPy'],
+    github: 'https://github.com/Nishanth2480/Emotion-Detection.git',
+    gradient: 'from-blue-400 to-purple-500'
+  }, {
+    id: 'RDM',
+    title: 'RE-REACT Document Management',
+    shortTitle: 'RDM',
+    description: 'Built a document management system using React.js and Microsoft Prebuilt to detect and manipulate sensitive PII in text, Excel, and Word documents. Enabled custom entity recognition, document uploads, and pseudonym generation with a clean and intuitive interface.',
+    tech: ['React.js', 'TensorFlow', 'OpenCV', 'Document Processing'],
+    additionalTech: ['Entity Recognition'],
+    github: 'https://github.com/Nishanth2480/RE-DACT.git',
+    gradient: 'from-green-400 to-blue-500'
+  }, {
+    id: 'IPW',
+    title: 'Investment Portfolio Website',
+    shortTitle: 'IPW',
+    description: 'Developed a live stock trading platform using React.js, Redux, TailwindCSS, Node.js, and Express.js. Implemented user authentication, stock detail views, owned stock linking, and a smooth persistent system with responsive UI.',
+    tech: ['React.js', 'Redux', 'TailwindCSS', 'Node.js', 'Express.js'],
+    github: 'https://github.com/Nishanth2480/Investment-Website.git',
+    gradient: 'from-pink-400 to-purple-500'
+  }];
+  const achievements = [{
+    title: 'LeetCode Problem Solver',
+    category: 'Competitive Programming',
+    description: 'Solved 250+ problems on LeetCode, demonstrating strong problem-solving skills in data structures and algorithms. Additionally completed top-month data analyst internship at AppScuba.',
+    icon: <Code className="w-6 h-6" />
+  }, {
+    title: 'AI/ML Certifications',
+    category: 'Certifications',
+    description: 'Completed multiple certifications including Introduction to Internet of Things (NPTEL), Cloud Practitioner Essentials (AWS), Microsoft Power BI Desktop (Coursera), and Machine Learning (Coursera).',
+    icon: <Award className="w-6 h-6" />
+  }, {
+    title: 'Full-Stack Development',
+    category: 'Development',
+    description: 'Successfully developed and deployed multiple full-stack applications including restaurant management systems, emotion detection systems, and investment portfolio platforms.',
+    icon: <Globe className="w-6 h-6" />
+  }, {
+    title: 'Python Full Stack Certification',
+    category: 'Certification',
+    description: 'Earned comprehensive Python Full Stack certification from Skill Vertex, demonstrating proficiency in both frontend and backend development using Python technologies.',
+    icon: <FileText className="w-6 h-6" />
+  }];
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'Expert': return 'bg-green-500';
-      case 'Advanced': return 'bg-blue-500';
-      case 'Intermediate': return 'bg-yellow-500';
-      case 'Beginner': return 'bg-gray-500';
-      default: return 'bg-gray-500';
+      case 'Expert':
+        return 'bg-green-500';
+      case 'Advanced':
+        return 'bg-blue-500';
+      case 'Intermediate':
+        return 'bg-yellow-500';
+      case 'Beginner':
+        return 'bg-gray-500';
+      default:
+        return 'bg-gray-500';
     }
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-40 bg-slate-900/90 backdrop-blur-xl border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
@@ -159,24 +183,27 @@ const Index = () => {
               Nishanth
             </div>
             <div className="hidden md:flex space-x-8">
-              {[
-                { id: 'hero', label: 'Home' },
-                { id: 'about', label: 'About' },
-                { id: 'skills', label: 'Skills' },
-                { id: 'experience', label: 'Experience' },
-                { id: 'projects', label: 'Projects' },
-                { id: 'contact', label: 'Contact' }
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`transition-all duration-300 hover:text-blue-400 ${
-                    activeSection === item.id ? 'text-blue-400' : 'text-white/70'
-                  }`}
-                >
+              {[{
+              id: 'hero',
+              label: 'Home'
+            }, {
+              id: 'about',
+              label: 'About'
+            }, {
+              id: 'skills',
+              label: 'Skills'
+            }, {
+              id: 'experience',
+              label: 'Experience'
+            }, {
+              id: 'projects',
+              label: 'Projects'
+            }, {
+              id: 'contact',
+              label: 'Contact'
+            }].map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`transition-all duration-300 hover:text-blue-400 ${activeSection === item.id ? 'text-blue-400' : 'text-white/70'}`}>
                   {item.label}
-                </button>
-              ))}
+                </button>)}
             </div>
           </div>
         </div>
@@ -200,52 +227,25 @@ const Index = () => {
           </p>
           
           <div className="flex justify-center gap-6 mb-12">
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
-              onClick={() => window.open('https://github.com/Nishanth2480', '_blank')}
-            >
+            <Button variant="outline" size="lg" className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300" onClick={() => window.open('https://github.com/Nishanth2480', '_blank')}>
               <Github className="w-8 h-8 text-blue-400 hover:text-white" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
-              onClick={() => window.open('https://www.linkedin.com/in/nishanth-premkumar-2177a1260', '_blank')}
-            >
+            <Button variant="outline" size="lg" className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300" onClick={() => window.open('https://www.linkedin.com/in/nishanth-premkumar-2177a1260', '_blank')}>
               <Linkedin className="w-8 h-8 text-blue-400 hover:text-white" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
-              onClick={() => window.open('https://leetcode.com/u/Nishanth2408/', '_blank')}
-            >
+            <Button variant="outline" size="lg" className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300" onClick={() => window.open('https://leetcode.com/u/Nishanth2408/', '_blank')}>
               <ExternalLink className="w-8 h-8 text-blue-400 hover:text-white" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
-              onClick={() => window.open('https://www.codechef.com/users/nishanth_08', '_blank')}
-            >
+            <Button variant="outline" size="lg" className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300" onClick={() => window.open('https://www.codechef.com/users/nishanth_08', '_blank')}>
               <ExternalLink className="w-8 h-8 text-blue-400 hover:text-white" />
             </Button>
           </div>
 
           <div className="flex flex-col md:flex-row gap-6 justify-center mb-8">
-            <Button 
-              onClick={() => scrollToSection('projects')}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full"
-            >
+            <Button onClick={() => scrollToSection('projects')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full">
               View My Work
             </Button>
-            <Button 
-              variant="outline" 
-              onClick={() => scrollToSection('contact')}
-              className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-full"
-            >
+            <Button variant="outline" onClick={() => scrollToSection('contact')} className="border-2 border-white/30 text-white px-8 py-3 rounded-full bg-purple-900 hover:bg-purple-800">
               Get In Touch
             </Button>
           </div>
@@ -331,14 +331,12 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {skillCategories.languages.map((skill, index) => (
-                  <div key={index} className="flex justify-between items-center">
+                {skillCategories.languages.map((skill, index) => <div key={index} className="flex justify-between items-center">
                     <span className="text-white font-medium">{skill.name}</span>
                     <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
                       {skill.category}
                     </Badge>
-                  </div>
-                ))}
+                  </div>)}
               </CardContent>
             </Card>
 
@@ -351,14 +349,12 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {skillCategories.frameworks.map((skill, index) => (
-                  <div key={index} className="flex justify-between items-center">
+                {skillCategories.frameworks.map((skill, index) => <div key={index} className="flex justify-between items-center">
                     <span className="text-white font-medium">{skill.name}</span>
                     <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
                       {skill.category}
                     </Badge>
-                  </div>
-                ))}
+                  </div>)}
               </CardContent>
             </Card>
 
@@ -371,14 +367,12 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {skillCategories.tools.map((skill, index) => (
-                  <div key={index} className="flex justify-between items-center">
+                {skillCategories.tools.map((skill, index) => <div key={index} className="flex justify-between items-center">
                     <span className="text-white font-medium">{skill.name}</span>
                     <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
                       {skill.category}
                     </Badge>
-                  </div>
-                ))}
+                  </div>)}
               </CardContent>
             </Card>
 
@@ -391,14 +385,12 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {skillCategories.soft.map((skill, index) => (
-                  <div key={index} className="flex justify-between items-center">
+                {skillCategories.soft.map((skill, index) => <div key={index} className="flex justify-between items-center">
                     <span className="text-white font-medium">{skill.name}</span>
                     <Badge className={`${getCategoryColor(skill.category)} text-white text-xs px-2 py-1`}>
                       {skill.category}
                     </Badge>
-                  </div>
-                ))}
+                  </div>)}
               </CardContent>
             </Card>
           </div>
@@ -452,8 +444,7 @@ const Index = () => {
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4 text-white">Featured Projects</h2>
           <div className="grid lg:grid-cols-2 gap-8 mt-16">
-            {projects.map((project, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300 overflow-hidden">
+            {projects.map((project, index) => <Card key={index} className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300 overflow-hidden">
                 <div className={`h-24 bg-gradient-to-r ${project.gradient} flex items-center justify-center`}>
                   <h3 className="text-2xl font-bold text-white">{project.shortTitle}</h3>
                 </div>
@@ -465,28 +456,19 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="bg-blue-500/20 text-blue-300 text-xs px-2 py-1">
+                    {project.tech.map((tech, techIndex) => <Badge key={techIndex} variant="secondary" className="bg-blue-500/20 text-blue-300 text-xs px-2 py-1">
                         {tech}
-                      </Badge>
-                    ))}
-                    {project.additionalTech?.map((tech, techIndex) => (
-                      <Badge key={`additional-${techIndex}`} variant="secondary" className="bg-purple-500/20 text-purple-300 text-xs px-2 py-1">
+                      </Badge>)}
+                    {project.additionalTech?.map((tech, techIndex) => <Badge key={`additional-${techIndex}`} variant="secondary" className="bg-purple-500/20 text-purple-300 text-xs px-2 py-1">
                         {tech}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
-                  <Button 
-                    variant="outline" 
-                    className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white w-full"
-                    onClick={() => window.open(project.github, '_blank')}
-                  >
+                  <Button variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white w-full" onClick={() => window.open(project.github, '_blank')}>
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -498,8 +480,7 @@ const Index = () => {
             Achievements & <span className="text-blue-400">Certifications</span>
           </h2>
           <div className="grid lg:grid-cols-2 gap-8 mt-16">
-            {achievements.map((achievement, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300">
+            {achievements.map((achievement, index) => <Card key={index} className="bg-slate-800/50 border-slate-700 hover:bg-slate-800/70 transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-blue-500/20 rounded-lg">
@@ -516,8 +497,7 @@ const Index = () => {
                     {achievement.description}
                   </p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -569,27 +549,11 @@ const Index = () => {
 
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
-                <input 
-                  type="text" 
-                  placeholder="Your Name" 
-                  className="bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
-                />
-                <input 
-                  type="email" 
-                  placeholder="your.email@example.com" 
-                  className="bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
-                />
+                <input type="text" placeholder="Your Name" className="bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400" />
+                <input type="email" placeholder="your.email@example.com" className="bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400" />
               </div>
-              <input 
-                type="text" 
-                placeholder="What's this about?" 
-                className="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
-              />
-              <textarea 
-                placeholder="Tell me about your project or just say hello!" 
-                rows={6}
-                className="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 resize-none"
-              />
+              <input type="text" placeholder="What's this about?" className="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400" />
+              <textarea placeholder="Tell me about your project or just say hello!" rows={6} className="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 resize-none" />
               <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3">
                 <MessageSquare className="w-5 h-5 mr-2" />
                 Send Message
@@ -607,8 +571,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
