@@ -547,7 +547,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 mx-0 py-[39px]">
               <div className="grid grid-cols-2 gap-4">
                 <input type="text" placeholder="Your Name" className="bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400" />
                 <input type="email" placeholder="your.email@example.com" className="bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400" />
