@@ -566,9 +566,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-slate-700 bg-slate-900">
         <div className="container mx-auto text-center">
-          <p className="text-gray-400">
-            © 2024 Nishanth Premkumar. Built with ❤️ using React and Tailwind CSS.
-          </p>
+          <p className="text-gray-400">© 2025 Nishanth Premkumar.</p>
         </div>
       </footer>
     </div>;
