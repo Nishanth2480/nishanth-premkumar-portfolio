@@ -203,7 +203,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300 flex items-center justify-center"
+              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://github.com/Nishanth2480', '_blank')}
             >
               <Github className="w-8 h-8" />
@@ -211,7 +211,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300 flex items-center justify-center"
+              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://www.linkedin.com/in/nishanth-premkumar-2177a1260', '_blank')}
             >
               <Linkedin className="w-8 h-8" />
@@ -219,7 +219,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300 flex items-center justify-center"
+              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://leetcode.com/u/Nishanth2408/', '_blank')}
             >
               <ExternalLink className="w-8 h-8" />
@@ -227,10 +227,26 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300 flex items-center justify-center"
+              className="border-2 border-blue-400 bg-blue-400/10 text-blue-400 hover:bg-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300"
               onClick={() => window.open('https://www.codechef.com/users/nishanth_08', '_blank')}
             >
               <ExternalLink className="w-8 h-8" />
+            </Button>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-6 justify-center mb-8">
+            <Button 
+              onClick={() => scrollToSection('projects')}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full"
+            >
+              View My Work
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => scrollToSection('contact')}
+              className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-full"
+            >
+              Get In Touch
             </Button>
           </div>
 
