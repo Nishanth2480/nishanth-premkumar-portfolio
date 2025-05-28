@@ -463,7 +463,7 @@ const Index = () => {
                         {tech}
                       </Badge>)}
                   </div>
-                  <Button variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white w-full" onClick={() => window.open(project.github, '_blank')}>
+                  <Button variant="outline" onClick={() => window.open(project.github, '_blank')} className="border-blue-400 text-blue-400 hover:text-white w-full text-left bg-purple-900 hover:bg-purple-800">
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </Button>
