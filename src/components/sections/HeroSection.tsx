@@ -1,19 +1,19 @@
-
 import React from 'react';
 import { Github, Linkedin, ExternalLink, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 interface HeroSectionProps {
   isVisible: boolean;
   scrollToSection: (sectionId: string) => void;
 }
-
-const HeroSection = ({ isVisible, scrollToSection }: HeroSectionProps) => {
-  return (
-    <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6 relative">
+const HeroSection = ({
+  isVisible,
+  scrollToSection
+}: HeroSectionProps) => {
+  return <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6 relative">
       <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h1 className="text-6xl md:text-7xl font-bold mb-6">
-          <span className="text-white">Hi, I'm</span>
+          <span className="text-white">
+Hi, I'm</span>
           <br />
           <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             Nishanth Premkumar
@@ -65,8 +65,6 @@ const HeroSection = ({ isVisible, scrollToSection }: HeroSectionProps) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
