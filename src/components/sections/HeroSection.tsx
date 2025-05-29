@@ -1,49 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, ExternalLink, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 interface HeroSectionProps {
   isVisible: boolean;
   scrollToSection: (sectionId: string) => void;
 }
-
 const HeroSection = ({
   isVisible,
   scrollToSection
 }: HeroSectionProps) => {
-  const titles = [
-    'Data Scientist',
-    'Full Stack Developer', 
-    'Python Developer',
-    'Data Analyst',
-    'Power BI Specialist'
-  ];
-
+  const titles = ['Data Scientist', 'Full Stack Developer', 'Python Developer', 'Data Analyst', 'Power BI Specialist'];
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
+      setCurrentTitleIndex(prevIndex => (prevIndex + 1) % titles.length);
     }, 4000);
-
     return () => clearInterval(interval);
   }, [titles.length]);
-
-  return (
-    <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6 relative">
+  return <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6 relative">
       <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h1 className="text-6xl md:text-7xl font-bold mb-6">
-          <span className="text-white">Hi, I'm</span>
+          <span className="text-white py-0 font-normal my-[90px]">Hi, I'm</span>
           <br />
           <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             Nishanth Premkumar
           </span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-4 h-8">
-          <span 
-            key={currentTitleIndex}
-            className="inline-block animate-fade-in"
-          >
+          <span key={currentTitleIndex} className="inline-block animate-fade-in">
             {titles[currentTitleIndex]}
           </span>
         </p>
@@ -91,8 +75,6 @@ const HeroSection = ({
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
