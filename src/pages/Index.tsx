@@ -124,7 +124,7 @@ const Index = () => {
     gradient: 'from-blue-400 to-purple-500'
   }, {
     id: 'RDM',
-    title: 'RE-REACT Document Management',
+    title: 'RE-DACT Document Management',
     shortTitle: 'RDM',
     description: 'Built a document management system using React.js and Microsoft Prebuilt to detect and manipulate sensitive PII in text, Excel, and Word documents. Enabled custom entity recognition, document uploads, and pseudonym generation with a clean and intuitive interface.',
     tech: ['React.js', 'TensorFlow', 'OpenCV', 'Document Processing'],
