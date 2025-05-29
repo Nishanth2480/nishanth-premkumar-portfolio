@@ -464,7 +464,7 @@ const Index = () => {
                         {tech}
                       </Badge>)}
                   </div>
-                  <Button variant="outline" onClick={() => window.open(project.github, '_blank')} className="border-blue-400 w-full bg-black text-zinc-50 text-center">
+                  <Button variant="outline" onClick={() => window.open(project.github, '_blank')} className="full bg-black text-zinc-50 text-center">
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </Button>
