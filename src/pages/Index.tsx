@@ -228,7 +228,7 @@ const Index = () => {
           </p>
           
           <div className="flex justify-center gap-6 mb-12">
-            <Button variant="outline" size="lg" onClick={() => window.open('https://github.com/Nishanth2480', '_blank')} className=" w-16 h-16 transition-all duration-300 bg-zinc-950 hover:bg-zinc-800 rounded-full text-neutral-50">
+            <Button variant="outline" size="lg" onClick={() => window.open('https://github.com/Nishanth2480', '_blank')} className="border-2 border-blue-400 w-16 h-16 transition-all duration-300 bg-zinc-950 hover:bg-zinc-800 rounded-full text-neutral-50">
               <Github className="w-8 h-8 text-blue-400 hover:text-white" />
             </Button>
             <Button variant="outline" size="lg" onClick={() => window.open('https://www.linkedin.com/in/nishanth-premkumar-2177a1260', '_blank')} className="border-2 border-blue-400 text-blue-400 hover:text-white rounded-full w-16 h-16 transition-all duration-300 bg-neutral-50">
