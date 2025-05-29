@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { ChevronDown } from 'lucide-react';
+import ContactForm from '@/components/ContactForm';
+
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -548,16 +550,7 @@ const Index = () => {
             </div>
 
             <div className="space-y-6 mx-0 py-[39px]">
-              <div className="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="Your Name" className="bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400" />
-                <input type="email" placeholder="your.email@example.com" className="bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400" />
-              </div>
-              <input type="text" placeholder="What's this about?" className="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400" />
-              <textarea placeholder="Tell me about your project or just say hello!" rows={6} className="w-full bg-slate-800/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 resize-none" />
-              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3">
-                <MessageSquare className="w-5 h-5 mr-2" />
-                Send Message
-              </Button>
+              <ContactForm />
             </div>
           </div>
         </div>
@@ -571,4 +564,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
