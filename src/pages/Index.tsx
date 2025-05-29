@@ -243,7 +243,7 @@ const Index = () => {
           </div>
 
           <div className="flex flex-col md:flex-row gap-6 justify-center mb-8">
-            <Button onClick={() => scrollToSection('projects')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full">
+            <Button onClick={() => scrollToSection('projects')} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full bg-violet-900 hover:bg-violet-800">
               View My Work
             </Button>
             <Button variant="outline" onClick={() => scrollToSection('contact')} className="border-2 border-white/30 text-white px-8 py-3 rounded-full bg-purple-900 hover:bg-purple-800">
