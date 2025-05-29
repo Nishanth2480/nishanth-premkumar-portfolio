@@ -6,7 +6,6 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { ChevronDown } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
-
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -465,7 +464,7 @@ const Index = () => {
                         {tech}
                       </Badge>)}
                   </div>
-                  <Button variant="outline" onClick={() => window.open(project.github, '_blank')} className="border-blue-400 text-blue-400 hover:text-white w-full text-left bg-purple-900 hover:bg-purple-800">
+                  <Button variant="outline" onClick={() => window.open(project.github, '_blank')} className="border-blue-400 w-full bg-black text-zinc-50 text-center">
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </Button>
@@ -564,5 +563,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
