@@ -20,7 +20,7 @@ const HeroSection = ({
   return <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6 relative">
       <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h1 className="text-6xl md:text-7xl font-bold mb-6">
-          <span className="text-white font-normal my-[100px]">Hi, I'm</span>
+          <span className="text-white py-0 font-normal my-[90px]">Hi, I'm</span>
           <br />
           <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             Nishanth Premkumar
