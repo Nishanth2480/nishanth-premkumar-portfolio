@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, ExternalLink, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
 interface HeroSectionProps {
   isVisible: boolean;
   scrollToSection: (sectionId: string) => void;
 }
+
 const HeroSection = ({
   isVisible,
   scrollToSection
 }: HeroSectionProps) => {
   const titles = ['Data Scientist', 'Full Stack Developer', 'Python Developer', 'Data Analyst', 'Power BI Specialist'];
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTitleIndex(prevIndex => (prevIndex + 1) % titles.length);
     }, 4000);
+
     return () => clearInterval(interval);
   }, [titles.length]);
-  return <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6 relative">
+
+  return (
+    <section id="hero" className="min-h-screen flex items-center justify-center text-center px-6 relative pt-20">
       <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <h1 className="text-6xl md:text-7xl font-bold mb-6">
           <span className="text-white py-0 font-normal my-[90px]">Hi, I'm</span>
@@ -26,6 +32,7 @@ const HeroSection = ({
             Nishanth Premkumar
           </span>
         </h1>
+        
         <p className="text-xl md:text-2xl text-gray-300 mb-4 h-8">
           <span key={currentTitleIndex} className="inline-block animate-fade-in">
             {titles[currentTitleIndex]}
@@ -75,6 +82,8 @@ const HeroSection = ({
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
