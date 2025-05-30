@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Code, Award, Globe, FileText } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,9 +12,9 @@ const AchievementsSection = () => {
       icon: <Code className="w-6 h-6" />
     },
     {
-      title: 'AI/ML Certifications',
+      title: 'Professional Certifications',
       category: 'Certifications',
-      description: 'Completed multiple certifications including Introduction to Internet of Things (NPTEL), Cloud Practitioner Essentials (AWS), Microsoft Power BI Desktop (Coursera), and Machine Learning (Coursera).',
+      description: 'Completed multiple certifications including Introduction to Internet of Things (NPTEL), Cloud Practitioner Essentials (AWS), and Microsoft Power BI Desktop (Coursera).',
       icon: <Award className="w-6 h-6" />
     },
     {
