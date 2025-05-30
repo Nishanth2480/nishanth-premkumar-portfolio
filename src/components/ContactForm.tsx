@@ -12,7 +12,7 @@ const ContactForm = () => {
     isSubmitting
   } = useContactForm();
   return <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 py-[50px]">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 py-[60px]">
         <div className="grid grid-cols-2 gap-4">
           <FormField control={form.control} name="name" render={({
           field
