@@ -14,11 +14,11 @@ const SkillsSection = () => {
       { name: 'Java', category: 'Beginner' }
     ],
     frameworks: [
-      { name: 'React.js', category: 'Intermediate' },
+      { name: 'React.js', category: 'Beginner' },
       { name: 'Node.js', category: 'Intermediate' },
-      { name: 'Express.js', category: 'Intermediate' },
+      { name: 'Express.js', category: 'Beginner' },
       { name: 'TensorFlow', category: 'Intermediate' },
-      { name: 'Scikit-learn', category: 'Intermediate' }
+      { name: 'Scikit-learn', category: 'Beginner' }
     ],
     tools: [
       { name: 'Git/GitHub', category: 'Beginner' },
