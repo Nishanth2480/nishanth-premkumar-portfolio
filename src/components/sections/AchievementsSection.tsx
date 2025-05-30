@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Code, Award, Globe, FileText } from 'lucide-react';
+import { Code, Award, Globe, FileText, Cloud, BarChart, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -13,10 +13,22 @@ const AchievementsSection = () => {
       icon: <Code className="w-6 h-6" />
     },
     {
-      title: 'Industry-Recognized Certifications',
-      category: 'Certifications',
-      description: 'Completed multiple certifications including Introduction to Internet of Things (NPTEL), Cloud Practitioner Essentials (AWS), and Microsoft Power BI Desktop (Coursera).',
-      icon: <Award className="w-6 h-6" />
+      title: 'Cloud Practitioner Essentials - AWS',
+      category: 'Certification',
+      description: 'Completed AWS Cloud Practitioner Essentials certification, demonstrating foundational knowledge of AWS cloud services, architecture, and best practices.',
+      icon: <Cloud className="w-6 h-6" />
+    },
+    {
+      title: 'Microsoft Power BI Desktop - Coursera',
+      category: 'Certification',
+      description: 'Earned Microsoft Power BI Desktop certification from Coursera, showcasing expertise in data visualization, business intelligence, and analytics dashboard creation.',
+      icon: <BarChart className="w-6 h-6" />
+    },
+    {
+      title: 'Cybersecurity Essentials - CISCO',
+      category: 'Certification',
+      description: 'Completed CISCO Cybersecurity Essentials certification, gaining comprehensive knowledge of network security, threat detection, and cybersecurity best practices.',
+      icon: <Shield className="w-6 h-6" />
     },
     {
       title: 'Full-Stack Development',
