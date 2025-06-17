@@ -25,7 +25,8 @@ const SkillsSection = () => {
       { name: 'VS Code', category: 'Intermediate' },
       { name: 'Figma', category: 'Intermediate' },
       { name: 'PowerBI', category: 'Intermediate' },
-      { name: 'Google Looker', category: 'Expert' }
+      { name: 'Google Looker', category: 'Expert' },
+      { name: 'Snowflake', category: 'Intermediate' }
     ],
     soft: [
       { name: 'Problem Solving', category: 'Expert' },
