@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Code, Database, Settings, Users } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,6 +10,7 @@ const SkillsSection = () => {
       { name: 'JavaScript', category: 'Beginner' },
       { name: 'HTML/CSS', category: 'Advanced' },
       { name: 'MySQL', category: 'Intermediate' },
+      { name: 'MongoDB', category: 'Beginner' },
       { name: 'Java', category: 'Beginner' }
     ],
     frameworks: [
