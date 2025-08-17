@@ -40,7 +40,7 @@ export const useContactForm = () => {
         from_email: data.email,
         subject: data.subject,
         message: data.message,
-        to_email: 'nishanth.direct@gmail.com'
+        to_email: 'nishanth.profession@gmail.com'
       };
 
       await emailjs.send(
