@@ -19,7 +19,7 @@ const SkillsSection = () => {
       { name: 'Express.js', category: 'Beginner' },
       { name: 'TensorFlow', category: 'Intermediate' },
       { name: 'Scikit-learn', category: 'Beginner' },
-      { name: 'Selenium', category: 'Beginner' }
+      { name: 'Selenium', category: 'Intermediate' }
     ],
     tools: [
       { name: 'Git/GitHub', category: 'Beginner' },
